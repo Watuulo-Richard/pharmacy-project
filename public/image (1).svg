@@ -1,0 +1,10 @@
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" class="icon icon-email" viewBox="0 0 24 20" style="enable-background:new 0 0 24 20;" xml:space="preserve">
+<g>
+	<g>
+		<path fill="currentColor" d="M1.9,2.6l8.6,6.8C11,9.7,11.5,9.9,12,9.9c0.5,0,1-0.1,1.5-0.4l8.7-6.8c0.7-0.5,0.5-1-0.3-1H2.2
+			C1.4,1.6,1.2,2,1.9,2.6"></path>
+		<path fill="currentColor" d="M22.7,4.4l-9.4,7.2c-0.8,0.5-1.8,0.5-2.6,0L1.3,4.4C0.6,3.9,0,4.1,0,5v11.8c0,0.9,0.7,1.6,1.6,1.6
+			c0,0,0,0,0,0h20.8c0.9,0,1.6-0.7,1.6-1.6V5C24,4.1,23.4,3.9,22.7,4.4"></path>
+	</g>
+</g>
+</svg>
