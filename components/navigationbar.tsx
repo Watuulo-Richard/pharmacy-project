@@ -5,6 +5,8 @@ import { CircleUserRound, Menu, Search, ShoppingBag, X } from 'lucide-react'
 import Image from 'next/image'
 import { Button } from './ui/button'
 import { useState } from 'react'
+import { useCartStore } from '@/store/store'
+import Link from 'next/link'
 
 export default function NavigationBar() {
     const [showMenu, setShowMenu] = useState(false)
@@ -12,7 +14,8 @@ export default function NavigationBar() {
         setShowMenu(!showMenu)
         console.log(showMenu)
     }
-  return (
+    const {cartArray} = useCartStore()
+    return (
     <div>
         <nav className='bg-slate-50/80 flex flex-col justify-between md:flex-row px-2  md:px-4 py-2' >
             {/* Left */}
@@ -39,13 +42,13 @@ export default function NavigationBar() {
                 {
                     showMenu?(
                         <div className="">
-                            <Button onClick={()=>handleShowMenu} variant="destructive">
+                            <Button onClick={()=>handleShowMenu()} variant="destructive">
                                 <X />
                             </Button>
                         </div>
                     ):(
                     <div className="block md:hidden">
-                        <Button onClick={()=>handleShowMenu} variant="outline">
+                        <Button onClick={()=>handleShowMenu()} variant="outline">
                             <Menu />
                         </Button>
                     </div>
@@ -63,10 +66,12 @@ export default function NavigationBar() {
                     <input type="search" className='bg-transparent focus:outline-none w-[90%] placeholder: placeholder-gray-800' name="" id="" />
                     <Search className='w-[10%]'/>
                 </div>
-                <div className="relative hover:border-2 border-gray-900 w-10 h-10 rounded-full flex items-center justify-center">
-                    <ShoppingBag />
-                    <div className="bg-slate-50 w-4 h-4 flex items-center justify-center rounded-full absolute -top-1 -right-1">0</div>
-                </div>
+                <Link href="/cart">
+                    <div className="relative hover:border-2 border-gray-900 w-10 h-10 rounded-full flex items-center justify-center">
+                        <ShoppingBag />
+                        <div className="bg-slate-50 w-4 h-4 flex items-center justify-center rounded-full absolute -top-1 -right-1">{cartArray.length}</div>
+                    </div>
+                </Link>
                 <div className="">
                     <CircleUserRound />
                 </div>
